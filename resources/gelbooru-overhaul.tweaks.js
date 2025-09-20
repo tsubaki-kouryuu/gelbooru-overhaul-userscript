@@ -477,8 +477,7 @@ function autoScroll() {
             history.scrollRestoration = 'auto';
         }
     }
-    // not works for video
-    let video = document.querySelector(".gelcomVPlayer");
+    let video = document.querySelector("#gelcomVideoPlayer");
     if (video) {
         utils.debugLog(`Found video`);
         utils.debugLog(`Height is ${window.innerHeight} vs ${video.height}`);
