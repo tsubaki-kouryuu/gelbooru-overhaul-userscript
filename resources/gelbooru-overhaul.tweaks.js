@@ -490,6 +490,7 @@ function autoScroll() {
         } else {
             history.scrollRestoration = 'auto';
         }
+    }
 }
 function toggleFitMode() {
     utils.debugLog("Toggling fit mode");
