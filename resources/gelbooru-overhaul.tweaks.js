@@ -477,6 +477,19 @@ function autoScroll() {
         }
     }
     // not works for video
+    let video = document.querySelector("#gelcomVideoPlayer");
+    if (video) {
+        // only if image fit window
+        utils.debugLog(`Height is ${window.innerHeight} vs ${video.height}`);
+        utils.debugLog(`Width  is ${window.innerWidth} vs ${video.width}`);
+
+        if (window.innerHeight > video.height && window.innerWidth > video.width) {
+            utils.debugLog("Scrolling");
+            video.scrollIntoView({ block: "center", inline: "center", behavior: "smooth" });
+            history.scrollRestoration = 'manual';
+        } else {
+            history.scrollRestoration = 'auto';
+        }
 }
 function toggleFitMode() {
     utils.debugLog("Toggling fit mode");
