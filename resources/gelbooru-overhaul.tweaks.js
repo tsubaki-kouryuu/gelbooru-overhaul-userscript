@@ -465,6 +465,7 @@ function autoScroll() {
 
     if (image) {
         // only if image fit window
+        utils.debugLog(`Found image`);
         utils.debugLog(`Height is ${window.innerHeight} vs ${image.height}`);
         utils.debugLog(`Width  is ${window.innerWidth} vs ${image.width}`);
 
@@ -477,9 +478,9 @@ function autoScroll() {
         }
     }
     // not works for video
-    let video = document.querySelector("#gelcomVideoPlayer");
+    let video = document.querySelector(".gelcomVPlayer");
     if (video) {
-        // only if image fit window
+        utils.debugLog(`Found video`);
         utils.debugLog(`Height is ${window.innerHeight} vs ${video.height}`);
         utils.debugLog(`Width  is ${window.innerWidth} vs ${video.width}`);
 
