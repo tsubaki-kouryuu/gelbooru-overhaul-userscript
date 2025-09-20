@@ -409,14 +409,17 @@ class utils {
         if (Object.keys(utils.postCache).length > context.configManager.findValueByKey("general.maxCache"))
             utils.postCache = {};
 
+        let apiKey = context.configManager.findValueByKey("api.key");
+        let userID = context.configManager.findValueByKey("api.userID");
+
         if (!utils.postCache[postId]) {
-            return this.fetchQueue.Fetch("https://" + window.location.host + "/index.php?page=dapi&s=post&q=index&json=1&id=" + postId)
+            return this.fetchQueue.Fetch("https://" + window.location.host + "/index.php?page=dapi&s=post&q=index&json=1&api_key=" + apiKey + "&user_id=" + userID + "&id=" + postId)
                 .then(response => response.json())
                 .then(json => {
                     let post = json.post[0];
 
                     let fileLink = post.file_url;
-                    let highResThumb = fileLink.startsWith("https://video") ? fileLink.replace(new RegExp(/\.([^\.]+)$/, "gm"), ".jpg").replace(/https:\/\/[^\.]+\./, 'https://img3.') : fileLink;
+                    let highResThumb = fileLink.startsWith("https://video") ? fileLink.replace(new RegExp(/\.([^\.]+)$/, "gm"), ".jpg").replace(/https:\/\/[^\.]+\./, 'https://img4.') : fileLink;
                     let md5 = post.md5;
 
                     if (!highResThumb || !fileLink) throw new Error("Failed to parse url");

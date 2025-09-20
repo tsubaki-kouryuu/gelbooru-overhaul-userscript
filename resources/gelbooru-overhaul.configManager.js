@@ -181,6 +181,21 @@ class ConfigManager {
                     }
                 }
             },
+            api: {
+                name: "API",
+                items: {
+                    key: {
+                        value: "",
+                        name: "API Key",
+                        description: "Your API key for accessing the Gelbooru API"
+                    },
+                    userID: {
+                        value: "",
+                        name: "User ID",
+                        description: "Your user ID for accessing user-specific API features"
+                    }
+                }
+            },
             darkMode: {
                 name: "Dark Mode",
                 items: {

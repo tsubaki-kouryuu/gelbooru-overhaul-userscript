@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name        Gelbooru Overhaul
-// @namespace   https://github.com/Enchoseon/gelbooru-overhaul-userscript/raw/main/gelbooru-overhaul.user.js
+// @namespace   https://github.com/tsubaki-kouryuu/gelbooru-overhaul-userscript/raw/main/gelbooru-overhaul.user.js
 // @version     1.1.1
 // @description Various toggleable changes to Gelbooru such as enlarging the gallery, removing the sidebar, and more.
-// @author      Enchoseon
+// @author      Enchoseon, Tsubaki Kouryuu
 // @match       https://*.gelbooru.com/*
 // @run-at      document-start
 // @grant       GM_getValue
@@ -12,14 +12,14 @@
 // @grant       GM_addStyle
 // @grant       GM_addElement
 // @grant       GM_getResourceText
-// @resource    css 	    https://github.com/Enchoseon/gelbooru-overhaul-userscript/raw/main/resources/gelbooru-overhaul.css
-// @resource    css-common 	https://github.com/Enchoseon/gelbooru-overhaul-userscript/raw/main/resources/gelbooru-overhaul-common.css
-// @require     https://github.com/Enchoseon/gelbooru-overhaul-userscript/raw/main/resources/gelbooru-overhaul.utils.js
-// @require     https://github.com/Enchoseon/gelbooru-overhaul-userscript/raw/main/resources/gelbooru-overhaul.configManager.js
-// @require     https://github.com/Enchoseon/gelbooru-overhaul-userscript/raw/main/resources/gelbooru-overhaul.tweaks.js
-// @require     https://github.com/Enchoseon/gelbooru-overhaul-userscript/raw/main/resources/gelbooru-overhaul.themeManager.js
-// @require     https://github.com/Enchoseon/gelbooru-overhaul-userscript/raw/main/resources/gelbooru-overhaul.blacklistManager.js
-// @require     https://github.com/Enchoseon/gelbooru-overhaul-userscript/raw/main/resources/gelbooru-overhaul.infiniteScrolling.js
+// @resource    css 	    https://github.com/tsubaki-kouryuu/gelbooru-overhaul-userscript/raw/main/resources/gelbooru-overhaul.css
+// @resource    css-common 	https://github.com/tsubaki-kouryuu/gelbooru-overhaul-userscript/raw/main/resources/gelbooru-overhaul-common.css
+// @require     https://github.com/tsubaki-kouryuu/gelbooru-overhaul-userscript/raw/main/resources/gelbooru-overhaul.utils.js
+// @require     https://github.com/tsubaki-kouryuu/gelbooru-overhaul-userscript/raw/main/resources/gelbooru-overhaul.configManager.js
+// @require     https://github.com/tsubaki-kouryuu/gelbooru-overhaul-userscript/raw/main/resources/gelbooru-overhaul.tweaks.js
+// @require     https://github.com/tsubaki-kouryuu/gelbooru-overhaul-userscript/raw/main/resources/gelbooru-overhaul.themeManager.js
+// @require     https://github.com/tsubaki-kouryuu/gelbooru-overhaul-userscript/raw/main/resources/gelbooru-overhaul.blacklistManager.js
+// @require     https://github.com/tsubaki-kouryuu/gelbooru-overhaul-userscript/raw/main/resources/gelbooru-overhaul.infiniteScrolling.js
 // ==/UserScript==
 
 (function () {
@@ -76,6 +76,9 @@
         configManager.addUpdateListener("thumbs.removeTitle", applyTweakRemoveTitle);
         configManager.addUpdateListener("thumbs.preventOffScreen", applyTweakPreventOffScreen);
         configManager.addUpdateListener("thumbs.roundCorners", applyTweakRoundCorners);
+
+        // configManager.addUpdateListener("api.key", applyTweakRoundCorners);
+        // configManager.addUpdateListener("api.userID", applyTweakRoundCorners);
 
         configManager.addUpdateListener("fastDL.thumbs", applyTweakFastDL);
         configManager.addUpdateListener("fastDL.post", applyTweakFastDLPost);
