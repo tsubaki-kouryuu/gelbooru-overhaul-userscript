@@ -2,14 +2,15 @@
 /* MAIN */
 .go-collapse-sidebar {
     position: fixed;
-    width: var(--collapsed-width, 5px);
+    width: var(--collapsed-width, 10px);
     height: 100%;
     margin: 0;
     overflow: hidden;
-    background: var(--collapsed-color, red);
+    background: rgba(0,0,0,0);
     transition: 142ms;
     font-size: 1em;
     z-index: 690420;
+    border-right: 0px;
 }
 .go-collapse-sidebar:hover {
     position: fixed;
