@@ -482,14 +482,9 @@ function autoScroll() {
         utils.debugLog(`Found video`);
         utils.debugLog(`Height is ${window.innerHeight} vs ${video.height}`);
         utils.debugLog(`Width  is ${window.innerWidth} vs ${video.width}`);
-
-        if (window.innerHeight > video.height && window.innerWidth > video.width) {
-            utils.debugLog("Scrolling");
-            video.scrollIntoView({ block: "center", inline: "center", behavior: "smooth" });
-            history.scrollRestoration = 'manual';
-        } else {
-            history.scrollRestoration = 'auto';
-        }
+        utils.debugLog("Scrolling");
+        video.scrollIntoView({ block: "center", inline: "center", behavior: "smooth" });
+        history.scrollRestoration = 'manual';
     }
 }
 function toggleFitMode() {
